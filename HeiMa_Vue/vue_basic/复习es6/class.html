@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Human{
+        static city = 'chain';
+        static stress = '北京街道';
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        static doSome(){console.log("this is doSome function!");}
+        static doOther(){console.log("this is doOther function!");}
+        formartNum(){console.log("this is formartNum function!");}
+    }
+
+    class Student extends Human{
+        constructor(name,age,id,sex){
+            super(name,age);
+            this.id = id;
+            this.sex = sex;
+        }
+        static doOther(){console.log("this is Student`s doOther function!");}
+        formartNum(){console.log("this is Student`s doOther function!");}
+    }
+
+    const human  = new Human('Jack',90);
+    const stu  = new Student('Jack',90,001,'女');
+
+    Human.doOther()
+    Student.doOther()
+    Human.doOther()
+    
+    
+
+
+
+</script>
+</html>

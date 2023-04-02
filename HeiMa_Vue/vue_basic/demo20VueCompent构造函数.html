@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue学习</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+
+    const student = Vue.extend( {
+        name:"student",
+        data(){
+            return {
+                studentName:"Lucy",
+                studentAge:18,
+            } 
+        },
+        template:`
+            <div>
+                <h1>{{studentName}}</h1>    
+                <h1>{{studentAge}}</h1>    
+            </div>
+        `,
+        
+    }
+    )
+
+    console.log(student);
+
+    const vm = new Vue({
+        el:"#root",
+        components:{
+            student,
+        },
+        template:`<student></student>`
+    }) 
+</script>
+</html>

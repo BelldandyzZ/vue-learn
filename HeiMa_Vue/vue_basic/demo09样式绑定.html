@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue学习</title>
+    <style>
+        .basic{
+            height: 100px;
+        }
+        .red{
+            background: red;
+        }
+        .black{
+            background: black;
+        }
+        .pink{
+            background: pink;
+        }
+
+        .text{
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <div class="basic " :class="styleC">this is box</div>
+
+        <div class="basic " :class="styleArr">this is box</div> -->
+
+
+        <div class="basic " :class="styleObj">this is box</div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:"#app",
+        data:{
+            styleA:'red',
+            styleB:'black',
+            styleC:'pink',
+            text:'text',
+
+
+            styleArr:['text','red'],
+
+
+            styleObj:{
+                black:false,
+                text:true
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin-top: 20px;
+        }
+        .box1{
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 1.阻止默认事件 -->
+        <a href="http://www.baidi.com" @click.prevent="shwoInfo">阻止默认事件demo</a>
+        <!-- 2. 阻止事件冒泡 -->
+        <div class="box1" @click="shwoInfo">
+            <button @click.stop="shwoInfo">click me</button>
+        </div>
+        <!-- 3. 事件只执行一次 -->
+        <button @click.once="shwoInfo">click me2</button>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:'#app',
+        methods: {
+            shwoInfo() {
+                alert("Helo World！")
+            },
+        },
+    })
+</script>
+</html>

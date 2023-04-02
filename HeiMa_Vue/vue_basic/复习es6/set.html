@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    const set = new Set([...'1122fdsagaa']);
+
+    // console.log(set);
+
+    // const arr = [...set];
+
+    // console.log(arr);
+
+    // const map = new Map();
+    // map.set('name','Lucy')
+    // map.get('name')
+
+    // map.set('name','Jack')
+    // map.get('name')
+
+    const map = new Map();
+
+    const person = {name:'Lucy'}
+
+    map.set('person',person)
+
+    // console.log(map.get('person'));
+
+    const arr = [1,43,23,12];
+    const o1 = {
+        name:"jack",
+        age:18,
+    }
+
+    for (const e in o1) {
+        console.log(e);
+    }
+
+    console.log("==========================");
+
+    for (let [i,e] of arr.entries()) {
+        console.log(`${i}:${e}`);
+    }
+
+    console.log("==========================");
+
+    for (let e in arr) {
+        console.log(e);
+    }
+
+
+    console.log(arr.entries());
+
+    
+
+
+</script>
+</html>

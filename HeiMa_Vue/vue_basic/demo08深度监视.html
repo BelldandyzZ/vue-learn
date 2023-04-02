@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue学习</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="numbers = {a:1111,b:222}">点我改变numbers的引用</button>
+
+        <button @click="numbers.a = numbers.a + 1">点我改变numbers.a的值</button>
+
+        <button @click="numbers.a = numbers.a + 1">开启深度监视</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:"#app",
+        data:{
+            numbers:{
+                a:1,
+                b:2,
+            }
+        },
+        watch:{
+           numbers:{
+                handler(newValue,oldValue){
+                    console.log('numbers的引用改变了');
+                }
+           },
+
+           numbers(newValue,oldValue){
+                console.log('numbers的引用改变了');
+           }
+        },
+  
+     
+    })
+
+</script>
+</html>

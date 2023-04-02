@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+d        div{
+            margin: 0 auto;
+        }
+        button{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body >
+     <div id="root">
+        <button @click="getMehtods">GET</button>
+
+        <button @click="postMethods">POST</button>
+
+        <button @click="putMethods">PUT</button>
+
+        <button @click="deleteMethods">DELETE</button>
+     </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:'#root',
+        methods: {
+            getMehtods(){
+                axios.request({
+                    method:"GET",
+                    url:"  http://localhost:3000/comments",
+                }).then(response=>{
+                    console.log(response);
+                })
+            },
+            postMethods(){
+                axios.post("http://localhost:3000/comments",
+                           {  "body": "some comment3123131a", "postId": 1 },
+
+                      )
+            }
+        },
+    })
+</script>
+</html>

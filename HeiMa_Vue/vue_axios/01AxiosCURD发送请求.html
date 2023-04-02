@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+d        div{
+            margin: 0 auto;
+        }
+        button{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body >
+     <div id="root">
+        <button @click="getMehtods">GET</button>
+
+        <button @click="postMethods">POST</button>
+
+        <button @click="putMethods">PUT</button>
+
+        <button @click="deleteMethods">DELETE</button>
+     </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:'#root',
+        methods: {
+            getMehtods(){
+                axios({
+                    method:"GET",
+                    url:"http://localhost:3000/posts/",
+                }).then(response=>{
+                    console.log(response.data);
+                })
+            },
+            postMethods(){
+                axios({
+                    method:"POST",
+                    url:"http://localhost:3000/posts",
+                    data:{
+                        title:"二十大召开了",
+                        author:"人民日报"
+                    }
+                }).then(response=>{
+                    console.log(response);
+                })
+            },
+
+            putMethods(){
+                axios({
+                    method:"PUT",
+                    url:"http://localhost:3000/posts/1",
+                    data:{
+                        title:"xxx",
+                        author:"1231231"
+                    }
+                }).then(response=>{
+                    console.log(231);
+                })
+            },
+            deleteMethods(){
+                axios({
+                    method:"DELETE",
+                    url:"http://localhost:3000/posts/1"
+                }).then(response=>{
+                    console.log(response);
+                })
+            }
+        },
+    })
+</script>
+</html>

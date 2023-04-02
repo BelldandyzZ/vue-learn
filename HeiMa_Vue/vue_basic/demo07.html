@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+         <input type="text"  v-model="firstName"><br><br>
+         <input type="text"  v-model="lastName"><br><br>
+
+         <div>{{fullName}}</div>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:'#app',
+        data:{
+            firstName:"尼古拉斯",
+            lastName:'酒桶'
+        },
+        computed:{
+            fullName:{
+                get(){
+                    return `${this.firstName} - ${this.lastName}`
+                },
+                set(value){
+                    // .....
+                }
+            }
+        }
+    })
+</script>
+</html>

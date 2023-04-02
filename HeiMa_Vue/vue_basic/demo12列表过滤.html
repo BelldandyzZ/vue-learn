@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue学习</title>
+</head>
+<body>
+    <div id="app">
+       <ul v-for="(e,index) in persons" :key="index">
+            <li>{{e.id}}-{{e.name}}-{{e.age}}</li>
+       </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:"#app",
+        data:{
+            persons:[
+                {id:"001",name:"马冬梅",age:34},
+                {id:"002",name:"周冬雨",age:16},
+                {id:"003",name:"周杰伦",age:25},
+                {id:"004",name:"温兆伦",age:41},
+            ],
+        }
+    })
+</script>
+</html>

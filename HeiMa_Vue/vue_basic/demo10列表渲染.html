@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue学习</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- 遍历数组 -->
+            <li v-for="(item, index) in persons" :key="index">
+                {{item.age}}-{{item.name}}
+            </li>
+        
+            <!-- 遍历对象 -->
+            <li v-for="(value, key) of user" :key="index">
+                {{key}}-{{value}}
+            </li>
+
+            <!-- 遍历字符串 -->
+            <li v-for="(char, index) in str" :key="index">
+                {{index}}-{{char}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const vm = new Vue({
+        el:"#app",
+        data:{
+            persons:[
+                {id:'001',name:'lucy',age:14},
+                {id:'002',name:'javk',age:10},
+                {id:'003',name:'marry',age:19},
+            ],
+            user:{
+                username:"HanMeiMei",
+                addr:"北京市"
+            },
+            str:"abcd"
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script type="module">
+
+    import defaultObj,{name,age,showName}  from './index.js';
+    showName();
+    console.log(name);
+    console.log(age);
+    console.log(defaultObj);
+
+    import * as modules from './index.js'; 
+    console.log(modules);
+    //使用默认导出固定写法'.default'
+    console.log(modules.default);;
+
+
+    
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let student = {
+        name:"Lucy",
+        age:19,
+        height:"165",
+        addr:{city:"北京",stress:"xx胡同"}
+    }
+    let {name : studentName} =  student;
+    let {addr} = student;
+    let {age,...params} = student;
+
+
+    let {height,sex = '女'} = student;
+
+    
+    let arr = [1,2,3,[4]]
+
+    const [a,b,c] = arr;
+
+    const [q,w,e,[r]] = arr;
+
+
+    
+
+</script>
+
+</html>

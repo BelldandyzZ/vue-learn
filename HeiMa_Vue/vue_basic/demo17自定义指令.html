@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue学习</title>
+</head>
+<body>
+    <div id="app">
+       <!-- 自定义v-fbind指令，作用与v-bind一样，另外使用该指令绑定的input在页面刷新时默认聚焦 -->
+        <button @click="nAdd">点我n+1</button>
+        <input type="text"  v-fbind="n">
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+
+<script>
+    const vm = new Vue({
+        el:"#app",
+       data:{
+            n:1,
+       },
+       directives:{
+           fbind:{
+                bind(element,binding){
+                    //此时指令所在的元素与指令绑定,但是元素并没渲染到页面,无法进行聚焦操作
+                    element.value = binding.value
+                },
+                inserted(element,binding){
+                    //此时元素已经插入到页面，可以做聚焦操作
+                    element.focus();
+                },
+                update(element,binding){
+                    //页面重新解析给input的value赋最新值，然后聚焦
+                    element.value = binding.value
+                    element.focus();
+                }
+           }
+       },
+      methods: {
+        nAdd(){
+            console.log(this.n);
+            this.n = this.n + 1;
+        }
+      },
+      
+    })
+</script>
+</html>
